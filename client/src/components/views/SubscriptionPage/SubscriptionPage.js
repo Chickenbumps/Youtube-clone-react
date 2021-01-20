@@ -6,12 +6,14 @@ import moment from "moment";
 const { Title } = Typography;
 const { Meta } = Card;
 
-function LandingPage() {
-  const [Videos, setVideos] = useState([]);
+function SubscriptionPage() {
+  const [videos, setVideos] = useState([]);
+  const variables = {
+    userFrom: localStorage.getItem("userId"),
+  };
   useEffect(() => {
-    axios.get("/api/video/getVideos").then((res) => {
+    axios.post("/api/video/getSubscriptionVideos", variables).then((res) => {
       if (res.data.success) {
-        console.log(res.data);
         setVideos(res.data.videos);
       } else {
         alert("Failed to load video.");
@@ -19,7 +21,7 @@ function LandingPage() {
     });
   }, []);
 
-  const renderCards = Videos.map((video, index) => {
+  const renderCards = videos.map((video, index) => {
     let minutes = Math.floor(video.duration / 60);
     let seconds = Math.floor(video.duration - minutes * 60);
     return (
@@ -60,4 +62,4 @@ function LandingPage() {
   );
 }
 
-export default LandingPage;
+export default SubscriptionPage;
