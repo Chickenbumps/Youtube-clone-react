@@ -24,7 +24,7 @@ function SideVideo() {
           <a href={`/video/${video._id}`} style={{ collor: "gray" }}>
             <img
               style={{ width: "100%" }}
-              src={`http://localhost:5000/${video.thumbnail}`}
+              src={`http://localhost:7000/${video.thumbnail}`}
               alt="thumbnail"
             />
           </a>

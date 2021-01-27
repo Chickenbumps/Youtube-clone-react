@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Button } from "antd";
 import axios from "axios";
 function Subscribe(props) {
   const [subscribeNumber, setSubscribeNumber] = useState(0);
@@ -55,12 +56,11 @@ function Subscribe(props) {
 
   return (
     <div>
-      <button
+      <Button
         style={{
           background: `${subscribed ? "#AAAAAA" : "#CC0000"}`,
           borderRadius: "4px",
           color: "white",
-          padding: "10px 16px",
           fontWeight: "500",
           fontSize: "1rem",
           textTransform: "uppercase",
@@ -69,7 +69,7 @@ function Subscribe(props) {
       >
         {subscribeNumber}
         {subscribed ? "Subscribed" : "Subscribe"}
-      </button>
+      </Button>
     </div>
   );
 }

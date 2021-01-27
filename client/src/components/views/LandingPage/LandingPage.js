@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { FaCode } from "react-icons/fa";
 import { Card, Avatar, Col, Row, Typography } from "antd";
 import axios from "axios";
 import moment from "moment";
@@ -28,7 +27,7 @@ function LandingPage() {
           <a href={`/video/${video._id}`}>
             <img
               style={{ width: "100%" }}
-              src={`http://localhost:5000/${video.thumbnail}`}
+              src={`http://localhost:7000/${video.thumbnail}`}
               alt="thumbnail"
             />
             <div className="duration">

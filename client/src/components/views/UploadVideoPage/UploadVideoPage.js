@@ -4,7 +4,6 @@ import { Typography, Button, Form, message, Input } from "antd";
 import Icon, { PlusOutlined } from "@ant-design/icons";
 import Dropzone from "react-dropzone";
 import axios from "axios";
-import { FaRss } from "react-icons/fa";
 import { useSelector } from "react-redux";
 const { TextArea } = Input;
 const { Title } = Typography;
@@ -128,7 +127,7 @@ function UploadVideoPage(props) {
           {ThumbnailPath && (
             <div>
               <img
-                src={`http://localhost:5000/${ThumbnailPath}`}
+                src={`http://localhost:7000/${ThumbnailPath}`}
                 alt="thumbnail"
               />
             </div>
